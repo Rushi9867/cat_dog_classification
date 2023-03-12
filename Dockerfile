@@ -1,8 +1,7 @@
-FROM python:3.10 
-#7-slim-buster
+FROM python:3.7-slim-buster
 WORKDIR /app
 COPY . /app
 RUN apt update -y && apt install awscli -y
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 unzip -y && pip install -r requirements.txt
 #RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
+CMD ["python3", "app.py"]
